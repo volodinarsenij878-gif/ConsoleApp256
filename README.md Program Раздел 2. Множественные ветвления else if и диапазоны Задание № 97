@@ -1,0 +1,42 @@
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program97
+    {
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Введите частоту обновления монитора (Гц): ");
+            if (double.TryParse(Console.ReadLine(), out double hz) && hz > 0)
+            {
+                string purpose;
+                if (hz >= 60 && hz <= 75)
+                {
+                    purpose = "офис";
+                }
+                else if (hz >= 120 && hz <= 144)
+                {
+                    purpose = "базовый игровой";
+                }
+                else if (hz >= 165)
+                {
+                    purpose = "киберспорт";
+                }
+                else
+                {
+                    purpose = "другое назначение";
+                }
+
+                Console.WriteLine($"Назначение: {purpose} (частота: {hz} Гц)");
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: частота должна быть положительным числом.");
+            }
+        }
+    }
+    }
